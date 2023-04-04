@@ -1,0 +1,41 @@
+.container{
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 10px;
+}
+.category{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid red;
+    align-items:last baseline;
+    margin-bottom: 10px;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid blue;
+}
+.title h1{
+    width: 50%;
+}
+.counter{
+    display: flex;
+    
+}
+.counter :first-child,
+.counter :last-child{
+    width: 20px;
+    height: 20px;
+}
+.counter p{
+    min-width: 20px;
+    text-align: center;
+}
+.delBtn{
+    width: 30px;
+    height: 30px;
+    align-self: flex-end;
+}
