@@ -4,11 +4,11 @@ import s from './style.module.css'
 
 export default function SortBlock() {
     const categories = useSelector(state=> state.map(item => item.category))
-    console.log(categories);
+  
   return (
     <div className={s.wrapper}>
         {
-            categories.map(item => <p>{item}</p>)
+            categories.map(item => <p key={item.id}>{item}</p>)
         }
     </div>
   )

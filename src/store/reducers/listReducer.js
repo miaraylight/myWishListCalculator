@@ -2,6 +2,8 @@ const ADD_ITEM = 'ADD_ITEM'
 const INC_ITEM = 'INC_ITEM'
 const DEC_ITEM = 'DEC_ITEM'
 const DEL_ITEM = 'DEL_ITEM'
+const SEARCH_ITEM = 'SEARCH_ITEM'
+const RESET_SEARCH = 'RESET_SEARCH'
 
 const defaultState = [
     {
@@ -26,10 +28,11 @@ export const addItemToListAction = payload => ({type: ADD_ITEM, payload})
 export const incItemListAction = payload => ({type: INC_ITEM, payload})
 export const decItemListAction = payload => ({type: DEC_ITEM, payload})
 export const delItemfromListAction = payload => ({type: DEL_ITEM, payload})
+export const searchItemInTheListAction = payload => ({type: SEARCH_ITEM, payload})
+export const resetSearchAction = () => ({type: RESET_SEARCH})
 
-export const listReducer = (state = defaultState, action) => {
+export const listReducer = (state = [], action) => {
     if (action.type === ADD_ITEM) {
-        console.log([...state, {...action.payload}]);
         return [...state, {...action.payload}] 
     }else if (action.type === INC_ITEM) {
         const target = state.find(({id}) => id === action.payload)
@@ -40,10 +43,18 @@ export const listReducer = (state = defaultState, action) => {
         target.count--
         target.count = target.count <= 0 ? target.count = 0 : target.count 
         return [...state]
-    }
-    else if (action.type === DEL_ITEM) {
-        const target = state.find(({id}) => id === action.payload)
+    }else if (action.type === DEL_ITEM) {
         return state.filter(({id}) => id !== action.payload)
+    }else if (action.type === SEARCH_ITEM) {
+        return state.map(item => ({
+            ...item,
+            show: item.title.toLowerCase().startsWith(action.payload.toLowerCase()) 
+        }))
+    }else if (action.type === RESET_SEARCH) {
+        return state.map(item => ({
+            ...item,
+            show: true
+        }))
     }
     return state
 }
