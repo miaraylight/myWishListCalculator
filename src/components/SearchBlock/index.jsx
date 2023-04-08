@@ -14,8 +14,8 @@ export default function SearchBlock() {
   }
   return (
     <div>
-        <form onChange={onChange}>
-            <input  type="text" name="search" placeholder='Search'/>
+        <form >
+            <input onChange={onChange} type="text" name="search" placeholder='Search'/>
             <button>Search</button>
         </form>
     </div>

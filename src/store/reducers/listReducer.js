@@ -3,7 +3,8 @@ const INC_ITEM = 'INC_ITEM'
 const DEC_ITEM = 'DEC_ITEM'
 const DEL_ITEM = 'DEL_ITEM'
 const SEARCH_ITEM = 'SEARCH_ITEM'
-const RESET_SEARCH = 'RESET_SEARCH'
+const SORT_ITEM = 'SORT_ITEM'
+const SHOW_ALL = 'SHOW_ALL'
 
 const defaultState = [
     {
@@ -29,7 +30,8 @@ export const incItemListAction = payload => ({type: INC_ITEM, payload})
 export const decItemListAction = payload => ({type: DEC_ITEM, payload})
 export const delItemfromListAction = payload => ({type: DEL_ITEM, payload})
 export const searchItemInTheListAction = payload => ({type: SEARCH_ITEM, payload})
-export const resetSearchAction = () => ({type: RESET_SEARCH})
+export const sortItemAction = payload => ({type: SORT_ITEM, payload})
+export const showAllItemAction = () => ({type: SHOW_ALL})
 
 export const listReducer = (state = [], action) => {
     if (action.type === ADD_ITEM) {
@@ -50,11 +52,10 @@ export const listReducer = (state = [], action) => {
             ...item,
             show: item.title.toLowerCase().startsWith(action.payload.toLowerCase()) 
         }))
-    }else if (action.type === RESET_SEARCH) {
-        return state.map(item => ({
-            ...item,
-            show: true
-        }))
+    }else if (action.type === SORT_ITEM) {
+        return state.map(item => ({...item, sorted: action.payload === item.category ? true : false}))
+    }else if (action.type === SHOW_ALL) {
+        return state.map(item => ({...item, sorted: true}))
     }
     return state
 }

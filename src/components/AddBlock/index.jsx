@@ -14,6 +14,7 @@ export default function AddItem() {
       category: category.value,
       price: price.value,
       discount: discount.value,
+      priceWithDiscount: discount.value === undefined ? price.value * 1 : price.value - (price.value * discount.value/100),
       count: 1
     }
     dispatch(addItemToListAction(result))
