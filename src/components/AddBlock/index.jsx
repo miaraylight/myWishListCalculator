@@ -19,23 +19,27 @@ export default function AddItem() {
     }
     dispatch(addItemToListAction(result))
     title.value = ''
-    category.value = ''
     price.value = ''
     discount.value = ''
   }
   return (
-    <div>
-        <form onSubmit={onSubmit}>
-            <input type="text" name="title" placeholder='Title' />
-            <select id="category" name="category">
-                <option value="Food">Food</option>
-                <option value="Books">Books</option>
-                <option value="Gadjets">Gadjets</option>
-                <option value="Clothes">Clothes</option>
-                <option value="Other">Other</option>
+    <div className={s.container}>
+        <div className={s.title}>
+          <p>New Item</p>
+          <img src={process.env.PUBLIC_URL + "/icons/add-icon.png"} alt="" />
+        </div>
+        <form className={s.form} onSubmit={onSubmit}>
+            <label for="category">Choose a category:</label>
+            <select className={s.select} id="category" name="category" required>
+                <option value="food">Food</option>
+                <option value="home">Home</option>
+                <option value="appliances">Appliances</option>
+                <option value="clothes">Clothes</option>
+                <option value="other">Other</option>
             </select>
-            <input type="number" name="price" placeholder='Price'/>
-            <input type="number" name="discount" placeholder='Discount' />
+            <input type="text" name="title" placeholder='Title' required/>
+            <input type="number" min={0} name="price" placeholder='Price'/>
+            <input type="number" min={0} max={100} name="discount" placeholder='Discount' />
             <button>Add</button>
         </form>
     </div>

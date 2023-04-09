@@ -7,10 +7,19 @@ import './index.css';
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-     <AddItem></AddItem>
-     <ListContainer></ListContainer>
-     <CalculationsBlock></CalculationsBlock>
+      <div className="main">
+        <Header></Header>
+        <ListContainer></ListContainer>
+      </div>
+      <div className="side">
+
+        <AddItem></AddItem>
+        <CalculationsBlock></CalculationsBlock>
+      </div>
+      
+     
+     
+     
     </div>
   );
 }

@@ -1,0 +1,16 @@
+.container input{
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    padding-left: 30px;
+    background-image: url(../../../public/icons/searchIcon.png);
+    background-repeat: no-repeat;
+    background-position: 5%;
+    background-size: 20px 20px;
+    font-size: 16px;
+}
+.container input:focus{
+    outline: 1px solid #058bd3bb;
+    color: #058bd3;
+    font-size: 16px;
+}

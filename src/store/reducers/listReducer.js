@@ -6,23 +6,12 @@ const SEARCH_ITEM = 'SEARCH_ITEM'
 const SORT_ITEM = 'SORT_ITEM'
 const SHOW_ALL = 'SHOW_ALL'
 
-const defaultState = [
-    {
-        id: Date.now() + Math.random()*1000,
-        title: "Nokia",
-        category: "Gadjets",
-        price: 155,
-        discount: 3,
-        count: 1
-    },
-    {
-        id: Date.now() + Math.random()*1000,
-        title: "Morkovka",
-        category: "Food",
-        price: 15,
-        discount: 2,
-        count: 1
-    }
+const icons = [
+    {other: 'icons/otherIcon.png'},
+    {home: 'icons/homeIcon.png'},
+    {food: 'icons/foodIcon.png'},
+    {clothes: 'icons/clothesIcon.png'},
+    {appliances: 'icons/gadjetsIcons.png'}
 ]
 
 export const addItemToListAction = payload => ({type: ADD_ITEM, payload})
@@ -35,7 +24,8 @@ export const showAllItemAction = () => ({type: SHOW_ALL})
 
 export const listReducer = (state = [], action) => {
     if (action.type === ADD_ITEM) {
-        return [...state, {...action.payload}] 
+        const itemIcon = icons.find(item => item[action.payload.category])[action.payload.category]
+        return [...state, {...action.payload, icon: itemIcon}] 
     }else if (action.type === INC_ITEM) {
         const target = state.find(({id}) => id === action.payload)
         target.count++

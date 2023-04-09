@@ -1,0 +1,60 @@
+.container{
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #0c65c3;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+}
+.form label{
+    color: #BCBCBC;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+.select{
+    border: none;
+    color: #BCBCBC;
+    font-size: 15px;
+    border-bottom: 1px solid;
+}
+.select:focus{
+    outline: none;
+}
+.form input{
+    height: 35px;
+    border: none;
+    border-bottom: 2px solid #3ce7bd;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #05b4d3;
+}
+.form input:focus{
+    outline: 1px solid #3ce7e159;
+    color: #05b4d3;
+}
+.form button{
+    transition: opacity 0.5s;
+    height: 35px;
+    border: none;
+    border-radius: 15px;
+    margin-top: 30px;
+    background: linear-gradient(45deg, #058bd3, #00acc5, #02d0b7);
+    color: #c9ffff;
+    font-size: 18px;
+    opacity: 1;
+}
+.form button:hover{
+    opacity: 0.7;
+    background: linear-gradient(45deg, #02d0b7, #00acc5, #058bd3);
+}

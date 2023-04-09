@@ -13,11 +13,8 @@ export default function SearchBlock() {
     dispatch(searchItemInTheListAction(data))
   }
   return (
-    <div>
-        <form >
-            <input onChange={onChange} type="text" name="search" placeholder='Search'/>
-            <button>Search</button>
-        </form>
+    <div className={s.container}>
+        <input onChange={onChange} type="text" name="search" placeholder='Search'/>
     </div>
   )
 }

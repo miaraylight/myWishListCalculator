@@ -9,9 +9,12 @@ export default function CalculationsBlock() {
     
   return (
     <div className={s.container}>
-        <p>Price: ${totalPrice}</p>
-        <p>Discount: ${(totalPrice - priceWithDiscount).toFixed(2)}</p>
-        <p>Total: ${priceWithDiscount.toFixed(2)}</p>
+        <p>Price: </p>
+        <p className={s.digits}>{totalPrice}</p>
+        <p>Discount:</p>
+        <p className={s.digits}>{(totalPrice - priceWithDiscount).toFixed(2)}</p>
+        <p>Total:</p>
+        <p className={s.digits}>{priceWithDiscount.toFixed(2)}</p>
     </div>
   )
 }

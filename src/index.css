@@ -3,9 +3,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+input::-webkit-input-placeholder{
+  color: #BCBCBC
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
 
   body {
   margin: 0;
+  background-image: url(../public/images/backgroundImage.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
