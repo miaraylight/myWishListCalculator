@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/myWishListCalculator/static/css/main.b72bf5e3.css",
-    "main.js": "/myWishListCalculator/static/js/main.ed1d59fe.js",
+    "main.css": "/myWishListCalculator/static/css/main.d14f8392.css",
+    "main.js": "/myWishListCalculator/static/js/main.e13cbf20.js",
     "static/media/backgroundImage.jpg": "/myWishListCalculator/static/media/backgroundImage.928efbff46205102350e.jpg",
     "index.html": "/myWishListCalculator/index.html",
-    "main.b72bf5e3.css.map": "/myWishListCalculator/static/css/main.b72bf5e3.css.map",
-    "main.ed1d59fe.js.map": "/myWishListCalculator/static/js/main.ed1d59fe.js.map"
+    "main.d14f8392.css.map": "/myWishListCalculator/static/css/main.d14f8392.css.map",
+    "main.e13cbf20.js.map": "/myWishListCalculator/static/js/main.e13cbf20.js.map"
   },
   "entrypoints": [
-    "static/css/main.b72bf5e3.css",
-    "static/js/main.ed1d59fe.js"
+    "static/css/main.d14f8392.css",
+    "static/js/main.e13cbf20.js"
   ]
 }
