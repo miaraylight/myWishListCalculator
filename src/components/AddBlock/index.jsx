@@ -5,6 +5,7 @@ import { addItemToListAction } from '../../store/reducers/listReducer'
 
 export default function AddItem() {
   const dispatch = useDispatch()
+  
   const onSubmit = (e) => {
     e.preventDefault()
     const {title, category, price, discount} = e.target;
@@ -17,7 +18,9 @@ export default function AddItem() {
       priceWithDiscount: discount.value === undefined ? price.value * 1 : price.value - (price.value * discount.value/100),
       count: 1
     }
+
     dispatch(addItemToListAction(result))
+
     title.value = ''
     price.value = ''
     discount.value = ''

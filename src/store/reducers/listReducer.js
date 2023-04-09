@@ -7,14 +7,14 @@ const SORT_ITEM = 'SORT_ITEM'
 const SHOW_ALL = 'SHOW_ALL'
 
 const icons = [
-    {other: 'icons/otherIcon.png'},
-    {home: 'icons/homeIcon.png'},
-    {food: 'icons/foodIcon.png'},
-    {clothes: 'icons/clothesIcon.png'},
-    {appliances: 'icons/gadjetsIcons.png'}
+    {other: '/icons/otherIcon.png'},
+    {home: '/icons/homeIcon.png'},
+    {food: '/icons/foodIcon.png'},
+    {clothes: '/icons/clothesIcon.png'},
+    {appliances: '/icons/gadjetsIcons.png'}
 ]
 
-const defaultState = JSON.parse(localStorage.getItem('myWishList'))?? []
+const defaultState = JSON.parse(localStorage.getItem('myWishList')) ?? []
 const writeToLocalStorage = (list) => localStorage.setItem('myWishList', JSON.stringify(list))
 
 export const addItemToListAction = payload => ({type: ADD_ITEM, payload})

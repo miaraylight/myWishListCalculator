@@ -9,9 +9,9 @@ export default function SearchBlock() {
   const onChange = (e) => {
     e.preventDefault()
     const data = e.target.value
-    console.log(data);
     dispatch(searchItemInTheListAction(data))
   }
+
   return (
     <div className={s.container}>
         <input onChange={onChange} type="text" name="search" placeholder='Search'/>

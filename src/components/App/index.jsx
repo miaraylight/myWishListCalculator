@@ -12,14 +12,9 @@ function App() {
         <ListContainer></ListContainer>
       </div>
       <div className="side">
-
         <AddItem></AddItem>
         <CalculationsBlock></CalculationsBlock>
       </div>
-      
-     
-     
-     
     </div>
   );
 }

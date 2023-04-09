@@ -1,15 +1,17 @@
-.container{
+.container {
     display: grid;
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: repeat(3, 1fr);
     padding: 20px;
     color: rgb(165, 165, 165);
 }
-.container p{
+
+.container p {
     margin-top: 10px;
     padding: 10px 0;
 }
-.digits{
+
+.digits {
     text-align: end;
     color: #00acc5;
 }

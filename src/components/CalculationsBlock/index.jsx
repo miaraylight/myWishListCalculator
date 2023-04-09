@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import s from './style.module.css'
 
 export default function CalculationsBlock() {
-    const listItems = useSelector(state => state.filter(item => item.sorted===undefined || item.sorted===true ))
+    const listItems = useSelector(state => state.filter(item => item.sorted === undefined || item.sorted === true))
     const totalPrice = listItems.reduce((acc, item) => acc + item.price * item.count, 0)
     const priceWithDiscount = listItems.reduce((acc, item) => acc + item.priceWithDiscount * item.count, 0)
     

@@ -1,4 +1,4 @@
-.container input{
+.container input {
     height: 35px;
     border: none;
     border-radius: 10px;
@@ -9,7 +9,8 @@
     background-size: 20px 20px;
     font-size: 16px;
 }
-.container input:focus{
+
+.container input:focus {
     outline: 1px solid #058bd3bb;
     color: #058bd3;
     font-size: 16px;

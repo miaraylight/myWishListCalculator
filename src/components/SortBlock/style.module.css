@@ -5,6 +5,7 @@
     align-items: center;
     background: linear-gradient(45deg, #058bd376, #00abc573, #02d0b882);
 }
+
 .wrapper button{
     width: calc(100%/7);
     height: 28px;
