@@ -25,7 +25,7 @@ export default function AddItem() {
   return (
     <div className={s.container}>
         <div className={s.title}>
-          <p>New Item</p>
+          <p>Add New</p>
           <img src={process.env.PUBLIC_URL + "/icons/add-icon.png"} alt="" />
         </div>
         <form className={s.form} onSubmit={onSubmit}>

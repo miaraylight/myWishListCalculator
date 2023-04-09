@@ -14,6 +14,9 @@ const icons = [
     {appliances: 'icons/gadjetsIcons.png'}
 ]
 
+const defaultState = JSON.parse(localStorage.getItem('myWishList'))?? []
+const writeToLocalStorage = (list) => localStorage.setItem('myWishList', JSON.stringify(list))
+
 export const addItemToListAction = payload => ({type: ADD_ITEM, payload})
 export const incItemListAction = payload => ({type: INC_ITEM, payload})
 export const decItemListAction = payload => ({type: DEC_ITEM, payload})
@@ -22,20 +25,25 @@ export const searchItemInTheListAction = payload => ({type: SEARCH_ITEM, payload
 export const sortItemAction = payload => ({type: SORT_ITEM, payload})
 export const showAllItemAction = () => ({type: SHOW_ALL})
 
-export const listReducer = (state = [], action) => {
+export const listReducer = (state = defaultState, action) => {
     if (action.type === ADD_ITEM) {
         const itemIcon = icons.find(item => item[action.payload.category])[action.payload.category]
-        return [...state, {...action.payload, icon: itemIcon}] 
+        const newList = [...state, {...action.payload, icon: itemIcon}]
+        writeToLocalStorage(newList)
+        return newList 
     }else if (action.type === INC_ITEM) {
         const target = state.find(({id}) => id === action.payload)
         target.count++
+        writeToLocalStorage([...state])
         return [...state]
     }else if (action.type === DEC_ITEM) {
         const target = state.find(({id}) => id === action.payload)
         target.count--
         target.count = target.count <= 0 ? target.count = 0 : target.count 
+        writeToLocalStorage([...state])
         return [...state]
     }else if (action.type === DEL_ITEM) {
+        writeToLocalStorage(state.filter(({id}) => id !== action.payload))
         return state.filter(({id}) => id !== action.payload)
     }else if (action.type === SEARCH_ITEM) {
         return state.map(item => ({
